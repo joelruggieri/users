@@ -1,4 +1,4 @@
-package com.cashonline.model;
+package com.cashonline.model.user;
 
 import org.springframework.data.repository.CrudRepository;
 

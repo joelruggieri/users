@@ -1,35 +1,25 @@
-package com.cashonline.model;
+package com.cashonline.http.user;
 
-import org.hibernate.annotations.CreationTimestamp;
 
-import javax.persistence.*;
-import java.time.LocalDateTime;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
-@Entity
-@Table(name = "Users")
-public class User {
+import java.util.List;
 
-    @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+public class UserResponse {
+    @JsonProperty("id")
     private Integer id;
 
-    @Column(name = "first_name", nullable = false)
+    @JsonProperty("firstName")
     private String firstName;
 
-    @Column(name = "last_name", nullable = false)
+    @JsonProperty("lastName")
     private String lastName;
 
-    @Column(name = "email", nullable = false)
+    @JsonProperty("email")
     private String email;
 
-    @CreationTimestamp
-    @Column(name = "createdAt")
-    private LocalDateTime createdAt;
-
-    @PrePersist
-    public void onCreate() {
-        createdAt = LocalDateTime.now();
-    }
+    @JsonProperty("loans")
+    private List<LoanResponse> loans;
 
     public Integer getId() {
         return id;
@@ -61,5 +51,13 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public List<LoanResponse> getLoans() {
+        return loans;
+    }
+
+    public void setLoans(List<LoanResponse> loans) {
+        this.loans = loans;
     }
 }

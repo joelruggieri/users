@@ -9,7 +9,7 @@ CREATE TABLE IF NOT EXISTS Users (
 
 CREATE TABLE IF NOT EXISTS Loans (
     id   INTEGER      NOT NULL AUTO_INCREMENT,
-    total DECIMAL(40,20) NOT NULL,
+    amount DECIMAL(40,20) NOT NULL,
     user_id INTEGER      NOT NULL,
     created_at      DATETIME     NOT NULL,
     PRIMARY KEY (id),
