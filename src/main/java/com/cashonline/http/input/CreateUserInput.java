@@ -2,6 +2,7 @@ package com.cashonline.http.input;
 
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 
 
@@ -17,6 +18,7 @@ public class CreateUserInput {
 
     @JsonProperty("email")
     @NotNull
+    @Email
     private String email;
 
     public String getFirstName() {
