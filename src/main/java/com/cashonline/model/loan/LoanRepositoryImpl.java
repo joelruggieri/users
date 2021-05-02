@@ -23,7 +23,7 @@ public class LoanRepositoryImpl implements LoanRepositoryCustom {
         userId.ifPresent(id -> predicates.add(cb.equal(userIdValue, id)));
 
         cq.select(loan)
-                .where(cb.or(predicates.toArray(new Predicate[predicates.size()])));
+                .where(cb.and(predicates.toArray(new Predicate[predicates.size()])));
 
         int offset = (page - 1) * size;
 
@@ -41,7 +41,7 @@ public class LoanRepositoryImpl implements LoanRepositoryCustom {
         userId.ifPresent(id -> predicates.add(cb.equal(userIdValue, id)));
 
         cq.select(cb.count(loan))
-                .where(cb.or(predicates.toArray(new Predicate[predicates.size()])));
+                .where(cb.and(predicates.toArray(new Predicate[predicates.size()])));
 
         return entityManager.createQuery(cq).getSingleResult();
     }
