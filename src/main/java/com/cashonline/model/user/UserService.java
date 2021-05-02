@@ -15,8 +15,7 @@ public class UserService {
         user.setFirstName(firstName);
         user.setLastName(lastName);
         user.setEmail(email);
-        userRepository.save(user);
-        return user;
+        return userRepository.save(user);
     }
 
     public Optional<User> findUserById(Long id){
