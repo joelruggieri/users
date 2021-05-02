@@ -1,6 +1,7 @@
 package com.cashonline.model.loan;
 
 import com.cashonline.model.user.User;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
@@ -12,7 +13,6 @@ import org.springframework.test.context.junit4.SpringRunner;
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.Optional;
-import static org.assertj.core.api.Assertions.assertThat;
 
 @RunWith(SpringRunner.class)
 @DataJpaTest
@@ -68,33 +68,33 @@ public class LoanRepositoryTest {
     public void whenCountAllLoans_thenReturnCountingOfAllPersistedLoans() {
         Long loansAmount = loanRepository.count(Optional.empty());
 
-        assertThat(3L).isEqualTo(loansAmount);
+        Assertions.assertEquals(3L, loansAmount);
     }
 
     @Test
     public void whenCountLoansFilteringByUser_thenReturnCountingOfRequestedUserLoans() {
         Long loansAmount = loanRepository.count(Optional.of(user1.getId()));
 
-        assertThat(2L).isEqualTo(loansAmount);
+        Assertions.assertEquals(2L, loansAmount);
     }
 
     @Test
     public void whenListAllLoansInOnePage_thenReturnAllLoans() {
         List<Loan> loans = loanRepository.list(Optional.empty(), 1, 4);
 
-        assertThat(3L).isEqualTo(loans.size());
-        assertThat(loans.contains(loan1));
-        assertThat(loans.contains(loan2));
-        assertThat(loans.contains(loan3));
+        Assertions.assertEquals(3L, loans.size());
+        Assertions.assertTrue(loans.contains(loan1));
+        Assertions.assertTrue(loans.contains(loan2));
+        Assertions.assertTrue(loans.contains(loan3));
     }
 
     @Test
     public void whenListAllUserLoansInOnePage_thenReturnAllUserLoans() {
         List<Loan> loans = loanRepository.list(Optional.of(user1.getId()), 1, 4);
 
-        assertThat(2L).isEqualTo(loans.size());
-        assertThat(loans.contains(loan1));
-        assertThat(loans.contains(loan2));
+        Assertions.assertEquals(2L, loans.size());
+        Assertions.assertTrue(loans.contains(loan1));
+        Assertions.assertTrue(loans.contains(loan2));
     }
 
     @Test
@@ -102,10 +102,10 @@ public class LoanRepositoryTest {
         List<Loan> loansPage1 = loanRepository.list(Optional.of(user1.getId()), 1, 1);
         List<Loan> loansPage2 = loanRepository.list(Optional.of(user1.getId()), 2, 1);
 
-        assertThat(1L).isEqualTo(loansPage1.size());
-        assertThat(loansPage1.contains(loan1));
-        assertThat(1L).isEqualTo(loansPage2.size());
-        assertThat(loansPage2.contains(loan2));
+        Assertions.assertEquals(1L, loansPage1.size());
+        Assertions.assertTrue(loansPage1.contains(loan1));
+        Assertions.assertEquals(1L, loansPage2.size());
+        Assertions.assertTrue(loansPage2.contains(loan2));
     }
 
     @Test
@@ -113,8 +113,8 @@ public class LoanRepositoryTest {
         List<Loan> loansPage1 = loanRepository.list(Optional.of(user2.getId()), 1, 6);
         List<Loan> loansPage2 = loanRepository.list(Optional.of(user2.getId()), 2, 6);
 
-        assertThat(1L).isEqualTo(loansPage1.size());
-        assertThat(loansPage1.contains(loan3));
-        assertThat(loansPage2.isEmpty());
+        Assertions.assertEquals(1L, loansPage1.size());
+        Assertions.assertTrue(loansPage1.contains(loan3));
+        Assertions.assertTrue(loansPage2.isEmpty());
     }
 }

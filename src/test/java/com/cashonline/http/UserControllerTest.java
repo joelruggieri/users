@@ -4,7 +4,6 @@ import com.cashonline.http.input.CreateUserInput;
 import com.cashonline.http.output.UserResponse;
 import com.cashonline.model.user.User;
 import com.cashonline.model.user.UserNotFoundException;
-import com.cashonline.model.user.UserRepository;
 import com.cashonline.model.user.UserService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -14,8 +13,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-
-import javax.swing.text.html.Option;
 import java.util.Collections;
 import java.util.Optional;
 

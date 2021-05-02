@@ -9,11 +9,11 @@ public class LoansPaginatedResponse {
     private List<LoanResponse> loans;
 
     @JsonProperty("paging")
-    private PageResponse page;
+    private PageResponse paging;
 
-    public LoansPaginatedResponse(List<LoanResponse> items, PageResponse page) {
+    public LoansPaginatedResponse(List<LoanResponse> items, PageResponse paging) {
         this.loans = items;
-        this.page = page;
+        this.paging = paging;
     }
 
     public void setLoans(List<LoanResponse> loans) {
@@ -24,11 +24,11 @@ public class LoansPaginatedResponse {
         return loans;
     }
 
-    public void setPage(PageResponse page) {
-        this.page = page;
+    public void setPaging(PageResponse paging) {
+        this.paging = paging;
     }
 
-    public PageResponse getPage() {
-        return page;
+    public PageResponse getPaging() {
+        return paging;
     }
 }
