@@ -74,4 +74,8 @@ public class User {
     public List<Loan> getLoans() {
         return loans;
     }
+
+    public void setLoans(List<Loan> loans) {
+        this.loans = loans;
+    }
 }
