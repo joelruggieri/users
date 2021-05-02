@@ -21,6 +21,14 @@ public class UserResponse {
     @JsonProperty("loans")
     private List<LoanResponse> loans;
 
+    public UserResponse(Integer id, String firstName, String lastName, String email, List<LoanResponse> loans) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.loans = loans;
+    }
+
     public Integer getId() {
         return id;
     }

@@ -31,13 +31,9 @@ public class LoanController {
 
         List<Loan> loans = loanRepository.list(userId, page, size);
         Long total = loanRepository.count(userId);
-        List<LoanResponse> loansResponses = loans.stream().map(loan -> {
-            LoanResponse loanResponse = new LoanResponse();
-            loanResponse.setId(loan.getId());
-            loanResponse.setUserId(loan.getUserId());
-            loanResponse.setTotal(loan.getAmount().doubleValue());
-            return  loanResponse;
-        }).collect(Collectors.toList());
+        List<LoanResponse> loansResponses = loans.stream().map(loan ->
+            new LoanResponse(loan.getId(), loan.getUserId(), loan.getAmount().doubleValue()))
+                .collect(Collectors.toList());
 
         PageResponse pageResponse = new PageResponse();
         pageResponse.setPage(page);

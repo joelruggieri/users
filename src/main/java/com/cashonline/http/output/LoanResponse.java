@@ -12,6 +12,12 @@ public class LoanResponse {
     @JsonProperty("total")
     private Double total;
 
+    public LoanResponse(Integer id, Integer userId, Double total) {
+        this.id = id;
+        this.userId = userId;
+        this.total = total;
+    }
+
     public Integer getId() {
         return id;
     }
