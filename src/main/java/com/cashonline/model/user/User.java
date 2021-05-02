@@ -8,6 +8,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "Users")
+@Embeddable
 public class User {
 
     @Id

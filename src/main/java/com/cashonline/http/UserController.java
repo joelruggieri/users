@@ -1,5 +1,8 @@
-package com.cashonline.http.user;
+package com.cashonline.http;
 
+import com.cashonline.http.input.CreateUserInput;
+import com.cashonline.http.output.LoanResponse;
+import com.cashonline.http.output.UserResponse;
 import com.cashonline.model.user.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

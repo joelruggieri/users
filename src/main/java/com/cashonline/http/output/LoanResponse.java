@@ -1,4 +1,4 @@
-package com.cashonline.http.user;
+package com.cashonline.http.output;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

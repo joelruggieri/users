@@ -18,6 +18,7 @@ public class Loan {
     private BigDecimal amount;
 
     @ManyToOne
+    @Embedded
     private User user;
 
     @CreationTimestamp
