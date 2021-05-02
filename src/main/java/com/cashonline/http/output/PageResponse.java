@@ -13,6 +13,12 @@ public class PageResponse {
     @JsonProperty("total")
     private Integer total;
 
+    public PageResponse(Integer page, Integer size, Integer total) {
+        this.page = page;
+        this.size = size;
+        this.total = total;
+    }
+
     public void setPage(Integer page) {
         this.page = page;
     }

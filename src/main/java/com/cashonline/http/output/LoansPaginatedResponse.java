@@ -11,6 +11,11 @@ public class LoansPaginatedResponse {
     @JsonProperty("paging")
     private PageResponse page;
 
+    public LoansPaginatedResponse(List<LoanResponse> items, PageResponse page) {
+        this.loans = items;
+        this.page = page;
+    }
+
     public void setLoans(List<LoanResponse> loans) {
         this.loans = loans;
     }
