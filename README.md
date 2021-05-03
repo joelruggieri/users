@@ -10,7 +10,7 @@
 * In _src/main/resources/application.properties_ you can set your mysql credentials properly updating fields 
   _spring.datasource.username_ and _spring.datasource.password_
 * According to settings in this file you should:
-  1. Login to mysql with your user -> _mysql -u <user> -p_
+  1. Login to mysql with your user -> _mysql -u < user > -p_
   2. Create database -> _create database db_example;_
   3. Create credentials -> _create user 'exampleUser'@'%' identified by 'SpringBoot2.0';_
   4. Give all privileges to the user to the new database -> _grant all on db_example.* to 'exampleUser'@'%';_
