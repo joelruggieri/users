@@ -26,5 +26,5 @@
 NOTE: when you run app, _schema.sql_ and _data.sql_ are executed to create schemas and populate tables for the first time.
 
 ### Using Api
-You could for example retrieve user with id 2 executing curl in you command line:
+You can for example retrieve user with id 2 executing curl in you command line:
 _curl http://localhost:8080/users/2_
