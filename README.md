@@ -1,8 +1,8 @@
 # Spring Boot App Example
 
 ### Requirements
-* Gradle 6.8 or better
-* Java 13 or better
+* Gradle 6.8 or greater
+* Java 13 or greater
 * Mysql 8.0 or greater
 
 ### Before building and starting app
