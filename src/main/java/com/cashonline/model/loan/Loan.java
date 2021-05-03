@@ -2,8 +2,15 @@ package com.cashonline.model.loan;
 
 import com.cashonline.model.user.User;
 import org.hibernate.annotations.CreationTimestamp;
-
-import javax.persistence.*;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Entity;
+import javax.persistence.GenerationType;
+import javax.persistence.Column;
+import javax.persistence.PrePersist;
+import javax.persistence.ManyToOne;
+import javax.persistence.Embedded;
+import javax.persistence.Table;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 

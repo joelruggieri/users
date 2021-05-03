@@ -1,7 +1,6 @@
 package com.cashonline.http.output;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-
 import java.util.List;
 
 public class LoansPaginatedResponse {

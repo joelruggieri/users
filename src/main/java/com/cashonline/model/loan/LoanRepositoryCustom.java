@@ -1,7 +1,5 @@
 package com.cashonline.model.loan;
 
-import org.springframework.data.repository.NoRepositoryBean;
-
 import java.util.List;
 import java.util.Optional;
 

@@ -2,7 +2,17 @@ package com.cashonline.model.user;
 
 import com.cashonline.model.loan.Loan;
 import org.hibernate.annotations.CreationTimestamp;
-import javax.persistence.*;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Embeddable;
+import javax.persistence.Entity;
+import javax.persistence.GenerationType;
+import javax.persistence.Column;
+import javax.persistence.OneToMany;
+import javax.persistence.PrePersist;
+import javax.persistence.CascadeType;
+import javax.persistence.FetchType;
+import javax.persistence.Table;
 import java.time.LocalDateTime;
 import java.util.List;
 

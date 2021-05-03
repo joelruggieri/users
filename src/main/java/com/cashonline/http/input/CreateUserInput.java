@@ -1,10 +1,8 @@
 package com.cashonline.http.input;
 
-
 import com.fasterxml.jackson.annotation.JsonProperty;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
-
 
 public class CreateUserInput {
 
