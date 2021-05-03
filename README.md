@@ -5,7 +5,7 @@
 * Java 13 or better
 * Mysql 8.0 or greater
 
-### Before starting app
+### Before building and starting app
 * You should start your mysql service
 * In _src/main/resources/application.properties_ you can set your mysql credentials properly updating fields 
   _spring.datasource.username_ and _spring.datasource.password_
@@ -14,7 +14,8 @@
   2. Create database -> _create database db_example;_
   3. Create credentials -> _create user 'exampleUser'@'%' identified by 'SpringBoot2.0';_
   4. Give all privileges to the user to the new database -> _grant all on db_example.* to 'exampleUser'@'%';_
-
+  5. Create database used for integration tests -> _create database db_integration_test;_
+  6. Give all privileges to the user to the database for integration tests -> _grant all on db_integration_test.* to 'exampleUser'@'%';_
 
 ### Building App (with Tests)
 ./gradlew clean build
